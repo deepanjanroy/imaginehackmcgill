@@ -10,3 +10,4 @@ class Idea(models.Model):
 
 class IdeaComment(models.Model):
     comment_text = models.TextField(null=True, blank=True)
+    idea = models.ForeignKey(Idea, related_name="comments")

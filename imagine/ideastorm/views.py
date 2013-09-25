@@ -10,10 +10,10 @@ def index(request):
 
 def idealist(request):
     if request.method == 'POST':
+        context = {}
         new_idea = Idea.objects.create(title=request.POST['title'],
                                        description=request.POST['description'])
-
-    # render_to_response()
+        return render(request, 'ideastorm/index.html', context)
 
     if request.method == 'GET':
-        pass
+        return render(request, 'ideastorm/index.html', context)
