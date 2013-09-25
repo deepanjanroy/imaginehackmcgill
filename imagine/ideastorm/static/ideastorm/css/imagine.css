@@ -8,7 +8,8 @@ body {
 	padding-top: 50px;
 }
 
-.submit-blurb {
+.submit-blurb 
+.idea {
   text-align: center;  
   padding: 50px;  
   padding: 19px 29px 29px;
@@ -34,4 +35,5 @@ body {
     padding: 7px 9px;
     resize: none;
 }
+
 
