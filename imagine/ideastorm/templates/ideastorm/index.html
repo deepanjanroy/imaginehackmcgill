@@ -50,7 +50,7 @@
       	<div class="submit-blurb">
         	<h1>Submit an idea</h1>
         	<p class="lead">Have an idea for a project? <br />Is there some tool missing from your life?</p>      	
-        	<form class="form-signin" action="/ideas/" method="post">
+        	<form class="form-signin" action="/ideas/" method="post">{% csrf_token %}
 	        	<textarea rows="4" cols="50" placeholder="Give your idea a title"></textarea> <br />
 	        	<textarea rows="4" cols="50" placeholder="Describe your idea"></textarea> <br />
         		<button class="btn btn-large btn-primary" type="submit">Submit your idea</button>
