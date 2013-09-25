@@ -18,7 +18,7 @@ urlpatterns = patterns('',
         url(r'^$', views.index, name='home'),
         url(r'^ideas/$', views.idealist, name='idea-list'),
     # Uncomment the next line to enable the admin:
-        url(r'^admin/$', include(admin.site.urls)),
+        url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
