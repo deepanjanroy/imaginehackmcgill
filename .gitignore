@@ -1,3 +1,4 @@
 *.pyc
 .DS_Store
 imagine/imagine.sqlite3
+imagine_env
