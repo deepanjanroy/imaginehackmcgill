@@ -17,10 +17,21 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'ideastorm', ['Idea'])
 
+        # Adding model 'IdeaComment'
+        db.create_table(u'ideastorm_ideacomment', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('comment_text', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
+            ('idea', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['ideastorm.Idea'])),
+        ))
+        db.send_create_signal(u'ideastorm', ['IdeaComment'])
+
 
     def backwards(self, orm):
         # Deleting model 'Idea'
         db.delete_table(u'ideastorm_idea')
+
+        # Deleting model 'IdeaComment'
+        db.delete_table(u'ideastorm_ideacomment')
 
 
     models = {
@@ -30,6 +41,12 @@ class Migration(SchemaMigration):
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'})
+        },
+        u'ideastorm.ideacomment': {
+            'Meta': {'object_name': 'IdeaComment'},
+            'comment_text': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'idea': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': u"orm['ideastorm.Idea']"})
         }
     }
 
