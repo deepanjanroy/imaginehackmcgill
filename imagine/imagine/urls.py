@@ -25,7 +25,6 @@ urlpatterns = patterns('',
         url(r'^login/$', views.imagine_login, name='login'),
         url(r'^signup/$', views.signup, name='signup'),
 
-        url(r'', include('social.apps.django_app.urls', namespace='social')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
