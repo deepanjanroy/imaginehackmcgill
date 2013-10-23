@@ -19,6 +19,13 @@ urlpatterns = patterns('',
         url(r'^ideas/$', views.idealist, name='idea-list'),
     # Uncomment the next line to enable the admin:
         url(r'^admin/', include(admin.site.urls)),
+        url(r'^logout/$', views.sample_logout, name='logout'),
+        url(r'^logged_in/$', views.sample_logged_in, name='logged_in'),
+        url(r'^current_user/$', views.current_user, name='current_user'),
+        url(r'^login/$', views.imagine_login, name='login'),
+        url(r'^signup/$', views.signup, name='signup'),
+
+        url(r'', include('social.apps.django_app.urls', namespace='social')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
