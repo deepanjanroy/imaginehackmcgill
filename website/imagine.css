@@ -114,12 +114,20 @@ p {
 }
 
 .comment-user-info { 
+	float: left;
+}
 
+.comment-vote-info { 
+	float: right;
 }
 
 .comment-vote-info { 
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.bacon { 
+	clear:both;
 }
 
 .idea-description { 
