@@ -127,7 +127,6 @@ INSTALLED_APPS = (
     'ideastorm',
     'south',
     'django_extensions',
-    'social.apps.django_app.default',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -162,37 +161,10 @@ LOGGING = {
 }
 
 AUTHENTICATION_BACKENDS = (
-        'social_auth.backends.facebook.FacebookBackend',
         'django.contrib.auth.backends.ModelBackend'
     )
 
 
-SOCIAL_AUTH_FACEBOOK_KEY              = '437428319717784'
-SOCIAL_AUTH_FACEBOOK_SECRET          = '1c94c95009e37cb85dd539c6135cf99b'
-
-FACEBOOK_EXTENDED_PERMISSIONS = ['email']
-
-
-LOGIN_URL          = '/login/'
-LOGIN_REDIRECT_URL = '/logged_in/'
-LOGIN_ERROR_URL    = '/login/'
-
-SOCIAL_AUTH_PIPELINE = (
-    'social.pipeline.social_auth.social_details',
-    'social.pipeline.social_auth.social_uid',
-    'social.pipeline.social_auth.auth_allowed',
-    'social.pipeline.social_auth.social_user',
-    'social.pipeline.user.get_username',
-    'social.pipeline.user.create_user',
-    'social.pipeline.social_auth.associate_user',
-    'social.pipeline.social_auth.load_extra_data',
-    'social.pipeline.user.user_details'
-)
-
-# SOCIAL_AUTH_USER_MODEL = ""
-
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'social.apps.django_app.context_processors.backends',
-    'social.apps.django_app.context_processors.login_redirect',
 )
