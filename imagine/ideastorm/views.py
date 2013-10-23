@@ -1,6 +1,6 @@
 # Create your views here.
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from ideastorm.models import Idea
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
@@ -53,6 +53,7 @@ def imagine_login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
+                return redirect("current_user")
 
 def signup(request):
     context = {}

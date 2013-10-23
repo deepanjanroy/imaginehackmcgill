@@ -1,0 +1,9 @@
+<html>
+<head></head>
+<body>
+<div id="fb-root"></div>
+<script></script>
+<a rel="nofollow" href={% url "socialauth_begin" "facebook" %}>Facebook</a>
+<a href="{% url "socialauth_disconnect_individual" social.provider social.id %}">Disconnect {{ social.provider }}</a>
+</body>
+</html>

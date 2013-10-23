@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Imagine | Sign up</title>
+    <title>Imagine | Log in</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.css" rel="stylesheet">
@@ -46,15 +46,14 @@
     <div class="container">
       <div class="content-container">
       	<div class="content-box">
-        	<h1>Sign up</h1>
-          <p class="lead">Register to submit ideas and post comments.</p>
+        	<h1>Log in</h1>
+        	<p class="lead">Don't have an account? Sign up <a href="">here</a>.</p>
 
-
-			<form class="form-login" action="/ideas/" method="post">
-	        	<input type="text" class="form-control" placeholder="Email address" autofocus>
-	        	<input type="password" class="form-control" placeholder="Password">
-            <input type="username" class="form-control" placeholder="Username (Optional)">
-        		<button class="btn btn-large btn-primary" type="submit">Register</button>
+			<form class="form-login" action="/login/" method="post">
+            {% csrf_token %}
+	        	<input name="email" type="text" class="form-control" placeholder="Email address" autofocus>
+	        	<input name="password" type="password" class="form-control" placeholder="Password">
+        		<button class="btn btn-large btn-primary" type="submit">Log in</button>
 	        </form>
         </div>
       </div>
